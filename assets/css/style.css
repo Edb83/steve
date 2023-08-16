@@ -34,6 +34,11 @@ a {
     grid-template-rows: 33%;
 }
 
+.hero-image img {
+    display: block;
+    max-width: 100%;
+}
+
 /* Card */
 .card {
     border-radius: 2rem 2rem 0 0;
