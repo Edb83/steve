@@ -15,7 +15,9 @@
     --font-weight-bold: 900;
     --font-weight-regular: 400;
     --font-weight-light: 300;
-    --height-card: 450px;
+    /* use to explicitly set the card height:
+    --height-card: 450px; 
+    */
     --padding-card: 20px 25px 0;
 }
 
@@ -38,12 +40,19 @@ a {
 /* Layout */
 .container {
     display: grid;
+    grid-template-rows: repeat(3, 1fr);
     position: relative;
     height: 100vh;
+    margin: auto;
     justify-items: center;
     font-family: var(--font-primary);
     font-weight: var(--font-weight-bold);
     line-height: 1;
+}
+
+.hero-image {
+    grid-row: 1;
+    overflow: hidden;
 }
 
 .hero-image img {
@@ -53,10 +62,9 @@ a {
 
 /* Card */
 .card {
-    position: fixed;
-    bottom: 0;
+    grid-row: 2 / span 2;
     width: 100%;
-    height: var(--height-card);
+    height: var(--height-card, 100%); /* if setting card height explicitly */
     border-radius: 2.4rem 2.4rem 0 0;
     background-color: var(--color-background);
     color: hsl(var(--color-primary-hsl));
@@ -162,8 +170,21 @@ a {
     justify-content: space-between;
 }
 
-@media (min-width: 600px) {
-    .card {
+/* Media queries */
+@media (min-width: 768px) {
+    .container {
         max-width: 90%;
+    }
+    .hero-image {
+        grid-row: 1 / span 2;
+    }
+    .card {
+        grid-row: 3;
+    }
+}
+
+@media (min-width: 1200px ) {
+    .container {
+        max-width: 65%;
     }
 }
