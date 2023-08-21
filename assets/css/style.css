@@ -3,7 +3,7 @@
 
 /* Variables */
 :root {
-    --color-primary-hsl: 261, 54%, 33%;
+    --color-primary: #462681;
     --color-shadow: #0000001A;
     --color-background: #FFFFFF;
     --font-primary: 'Source Sans 3', sans-serif;
@@ -14,7 +14,6 @@
     --font-size-xs: 0.9rem;
     --font-weight-bold: 900;
     --font-weight-regular: 400;
-    --font-weight-light: 300;
     /* use to explicitly set the card height:
     --height-card: 450px; 
     */
@@ -34,7 +33,7 @@ body {
 
 a {
     text-decoration: none;
-    color: hsl(var(--color-primary-hsl));
+    color: var(--color-primary);
 }
 
 /* Layout */
@@ -67,7 +66,7 @@ a {
     height: var(--height-card, 100%); /* if setting card height explicitly */
     border-radius: 2.4rem 2.4rem 0 0;
     background-color: var(--color-background);
-    color: hsl(var(--color-primary-hsl));
+    color: var(--color-primary);;
     padding: var(--padding-card);
     box-shadow: 0 0 0 1px var(--color-shadow);
 }
@@ -95,8 +94,8 @@ a {
     margin: 20px 0;
     text-align: center;
     letter-spacing: -0.01rem;
-    border-top: 1px solid hsla(var(--color-primary-hsl), 0.5);
-    border-bottom: 1px solid hsla(var(--color-primary-hsl), 0.5);
+    border-top: 1px solid var(--color-primary);
+    border-bottom: 1px solid var(--color-primary);
 }
 
 .card__stats p {
@@ -129,7 +128,7 @@ a {
 
 .card__body nav li {
     padding: 21px 5.44px 21px 5px;
-    border-bottom: 1px solid hsla(var(--color-primary-hsl), 0.5);
+    border-bottom: 1px solid var(--color-primary);
     line-height: 1;
 }
 
@@ -152,7 +151,7 @@ a {
 .btn-back span {
     color: var(--color-background);
     font-size: var(--font-size-sm);
-    font-weight: var(--font-weight-light);
+    font-weight: var(--font-weight-regular);
 }
 
 .btn-more {
